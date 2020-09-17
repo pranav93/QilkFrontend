@@ -18,14 +18,19 @@ class MessageApp extends Component {
     }
 
     submitMessage = () => {
-        console.log(this.state);
-        this.setState({
-            messageList: [...this.state.messageList,
-            { id: 1, message: this.state.message }]
-        });
-        this.setState({
-            message: ""
-        });
+        const data = {
+            message: this.state.message
+        };
+        Axios.post('http://localhost:8080/messages/', data)
+            .then(response => {
+                this.setState({
+                    messageList: [...this.state.messageList,
+                    { id: response.data.data.id, message: this.state.message }]
+                });
+                this.setState({
+                    message: ""
+                });
+            });
     }
 
     getMessages = () => {
