@@ -16,7 +16,7 @@ class MessageForm extends Component {
     render() {
         return (
             <Aux classes={classes.MessageForm}>
-                <div>Post a message</div>
+                <h2>Post a message</h2>
                 <input
                     ref={this.inputElementRef}
                     type="text"
