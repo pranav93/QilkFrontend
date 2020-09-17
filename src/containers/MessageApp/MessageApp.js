@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Aux from '../../hoc/Aux';
 import MessageList from '../../components/MessageList/MessageList';
 import MessageForm from '../../components/MessageForm/MessageForm';
+import Axios from 'axios';
 
 class MessageApp extends Component {
     state = {
@@ -25,6 +26,19 @@ class MessageApp extends Component {
         this.setState({
             message: ""
         });
+    }
+
+    getMessages = () => {
+
+    }
+
+    componentDidMount() {
+        Axios.get('http://localhost:8080/messages/')
+            .then(response => {
+                this.setState({
+                    messageList: [...response.data.data.message_list]
+                })
+            });
     }
 
     render() {

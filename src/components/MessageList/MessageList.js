@@ -9,7 +9,10 @@ class MessageList extends Component {
             <Aux>
                 {
                     this.props.messages.map(
-                        (message) => <div>{message.id} - {message.message}</div>
+                        (message) => 
+                        <div key={message.id} className={classes.MessageItem}>
+                            {message.id} - {message.message}
+                        </div>
                     )
                 }
             </Aux>
