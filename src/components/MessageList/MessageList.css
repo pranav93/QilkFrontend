@@ -1,0 +1,8 @@
+.MessageList {
+    margin: 3% 35% auto 35%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-between;
+    border: 1px solid black;
+    padding: 2%;
+}

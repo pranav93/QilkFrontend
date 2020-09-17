@@ -21,7 +21,7 @@ class MessageForm extends Component {
                     ref={this.inputElementRef}
                     type="text"
                     onChange={e => this.props.changed(e)}
-                    value={this.props.name} />
+                    value={this.props.message} />
                 <button onClick={this.props.submitted}>Submit</button>
             </Aux>
         );
