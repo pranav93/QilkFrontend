@@ -22,7 +22,11 @@ class MessageForm extends Component {
                     type="text"
                     onChange={e => this.props.changed(e)}
                     value={this.props.message} />
-                <button onClick={this.props.submitted}>Submit</button>
+                <button
+                    className={classes.Button}
+                    onClick={this.props.submitted}>
+                    Submit
+                </button>
             </Aux>
         );
     }

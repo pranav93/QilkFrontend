@@ -5,13 +5,3 @@
     justify-content: space-between;
     align-items: center;
 }
-
-.MessageItem {
-    width: 400px;
-    display: flex;
-    flex-flow: column;
-    padding: 2%;
-    border: 1px solid #eee;
-    box-shadow: 0 2px 3px #ccc;  
-    align-items: center;
-}

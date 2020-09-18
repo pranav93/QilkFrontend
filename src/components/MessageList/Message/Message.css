@@ -1,0 +1,37 @@
+.Message {
+  width: 400px;
+  display: flex;
+  flex-flow: row;
+  padding: 2%;
+  border: 1px solid #eee;
+  box-shadow: 0 2px 3px #ccc;
+  align-items: center;
+}
+
+.Button {
+  background-color: orangered;
+  color: white;
+  font: inherit;
+  border: 1px solid orangered;
+  cursor: pointer;
+}
+
+.True {
+  background-color: green;
+  color: white;
+  font: inherit;
+}
+
+.False {
+  background-color: red;
+  color: white;
+  font: inherit;
+}
+
+.Message > * {
+  flex: 1 1;
+}
+
+.AlignCenter {
+  text-align: center;
+}
