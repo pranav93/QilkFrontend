@@ -6,3 +6,4 @@ import registerServiceWorker from './registerServiceWorker';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
+console.log(process.env.REACT_APP_API_BASE_URI);

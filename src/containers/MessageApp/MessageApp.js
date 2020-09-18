@@ -11,6 +11,8 @@ class MessageApp extends Component {
         messages: {}
     }
 
+    apiUrl = process.env.REACT_APP_API_BASE_URI;
+
     changeMessage = e => {
         console.log("newMessage", e.target.value);
         this.setState({
@@ -26,7 +28,7 @@ class MessageApp extends Component {
         const data = {
             message: this.state.message
         };
-        Axios.post('http://localhost:8080/messages/', data)
+        Axios.post(`${this.apiUrl}/messages/`, data)
             .then(response => {
                 const messages = { ...this.state.messages };
                 messages[response.data.data.id] = {
@@ -43,9 +45,7 @@ class MessageApp extends Component {
     }
 
     findPalindrome = key => {
-        console.log(key);
-        // http://localhost:8080/message/1/palindrome
-        Axios.get(`http://localhost:8080/message/${key}/palindrome/`)
+        Axios.get(`${this.apiUrl}/message/${key}/palindrome/`)
             .then(response => {
                 console.log(response.data.data);
                 const messages = { ...this.state.messages };
@@ -60,7 +60,7 @@ class MessageApp extends Component {
     }
 
     componentDidMount() {
-        Axios.get('http://localhost:8080/messages/')
+        Axios.get(`${this.apiUrl}/messages/`)
             .then(response => {
                 const messageList = response.data.data.message_list;
                 const messages = messageList.reduce(
