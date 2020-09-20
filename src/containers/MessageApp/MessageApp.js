@@ -63,6 +63,9 @@ class MessageApp extends Component {
         Axios.get(`${this.apiUrl}/messages/`)
             .then(response => {
                 const messageList = response.data.data.message_list;
+                if (messageList === null) {
+                    return
+                }
                 const messages = messageList.reduce(
                     (map, data) => {
                         map[data.id] = {
