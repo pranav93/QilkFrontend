@@ -5,7 +5,7 @@ import classes from './Message.css';
 
 const message = props => {
     let child = null;
-    let childClasses = [];
+    let childClasses = [classes.Pal];
     if (props.isPalindrome === null) {
         child = <button
             className={classes.Button}
@@ -24,6 +24,7 @@ const message = props => {
         <Aux>
             <span className={classes.Child}>{props.message}</span>
             <div className={childClasses.join(" ")}>{child}</div>
+            <button className={classes.DeleteButton} onClick={e => props.deleted(props.id)}>Delete</button>
         </Aux>
     )
 }

@@ -14,6 +14,7 @@ const messageList = props => (
                         id={key}
                         message={props.messages[key].message}
                         isPalindrome={props.messages[key].isPalindrome}
+                        deleted={props.deleteMessage}
                         clicked={props.findPalindrome} />
             )
         }

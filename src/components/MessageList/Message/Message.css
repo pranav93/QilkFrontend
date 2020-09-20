@@ -28,9 +28,22 @@
   font: inherit;
 }
 
-.Message > * {
-  flex: 1 1;
+.Message > span {
+  flex-basis: 20%;
+  flex-grow: 0;
 }
+
+.Message > .Pal {
+  text-align: center;
+  flex-basis: 60%;
+  flex-grow: 0;
+}
+
+.Message > .DeleteButton {
+  flex-basis: 20%;
+  flex-grow: 0;
+}
+
 
 .AlignCenter {
   text-align: center;

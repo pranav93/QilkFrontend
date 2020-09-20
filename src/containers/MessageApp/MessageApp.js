@@ -60,6 +60,19 @@ class MessageApp extends Component {
             });
     }
 
+    deleteMessage = key => {
+        Axios.delete(`${this.apiUrl}/message/${key}/`)
+            .then(response => {
+                console.log(response.data.data);
+            });
+
+        const messages = { ...this.state.messages };
+        delete messages[key];
+        this.setState({
+            messages: messages
+        });
+    }
+
     componentDidMount() {
         Axios.get(`${this.apiUrl}/messages/`)
             .then(response => {
@@ -91,6 +104,7 @@ class MessageApp extends Component {
                     changed={this.changeMessage} />
                 <MessageList
                     messages={this.state.messages}
+                    deleteMessage={this.deleteMessage}
                     findPalindrome={this.findPalindrome} />
             </Aux>
         );
