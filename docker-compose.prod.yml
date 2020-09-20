@@ -8,3 +8,5 @@ services:
       dockerfile: Dockerfile.prod
     ports:
       - "1337:80"
+    environment:
+      - REACT_APP_API_BASE_URI=awesome
