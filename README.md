@@ -28,7 +28,7 @@ Now run the frontend
 docker-compose up
 ```
 
-## What does each of these env fields even mean?
+## What do these env fields even mean?
 
 | Field                  |           Value            |
 | ---------------------- | :------------------------: |
